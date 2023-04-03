@@ -1,0 +1,24 @@
+version: '3'
+services:
+  account_server:
+    container_name: account_server
+    build:
+      dockerfile: docker/account_server
+      context: .
+    networks:
+      - small-net
+    ports:
+      - "127.0.0.1:4321:4321"
+  exchange_server:
+    container_name: exchange_server
+    build:
+      dockerfile: docker/exchange_server
+      context: .
+    networks:
+      - small-net
+    ports:
+      - "127.0.0.1:1337:1337"
+
+networks:
+  small-net:
+    driver: bridge

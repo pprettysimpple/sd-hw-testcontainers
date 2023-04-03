@@ -1,0 +1,46 @@
+[package]
+name = "hw3-testcontainers"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "hw3_testcontainers"
+path = "src/lib/mod.rs"
+
+[dependencies]
+hyper = { version = "0.14.14", features = ["full"] }
+hyper-router = "0.5.0"
+tokio = { version = "1.13.0", features = ["rt-multi-thread", "macros"] }
+url = "2.3.1"
+serde = "1.0.130"
+serde_json = "1.0.70"
+serde_derive = "1.0.158"
+log = "0.4.14"
+simple_logger = { version = "4.1.0", features = ["colors", "threads", "timestamps", "stderr"] }
+reedline-repl-rs = { version = "1.0.4", features = ["async"] }
+rand = "0.8.4"
+
+[[example]]
+name = "exchange_server"
+path = "src/examples/exchange_server.rs"
+
+[[example]]
+name = "account_server"
+path = "src/examples/account_server.rs"
+
+[[example]]
+name = "account_repl"
+path = "src/examples/account_repl.rs"
+
+[[example]]
+name = "exchange_repl"
+path = "src/examples/exchange_repl.rs"
+
+[[test]]
+name = "simple_run_all"
+path = "src/tests/simple_run_all.rs"
+
+[dev-dependencies]
+dockertest = "0.3.1"

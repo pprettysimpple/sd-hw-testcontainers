@@ -1,0 +1,6 @@
+FROM rust
+COPY target/debug/examples/account_server /bin/account_server
+EXPOSE 4321/tcp
+#RUN apt update && apt upgrade -y
+#RUN apt install -y iputils-ping
+CMD ["/bin/account_server"]
