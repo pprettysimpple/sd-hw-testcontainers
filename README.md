@@ -1,3 +1,5 @@
+### Attention! This is a one-night project for school!
+
 #### How to run services
 - In the root directory of the project:
 - `cargo build --example account_server`
